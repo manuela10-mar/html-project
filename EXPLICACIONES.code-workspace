@@ -1,0 +1,33 @@
+{
+	"folders": [
+		{
+			"name": "EXPLICACIONES",
+			"path": "../../EXPLICACIONES"
+		},
+		{
+			"name": "TALLER NÚMERO 1",
+			"path": "../../TALLER NÚMERO 1"
+		},
+		{
+			"name": "IntroduccionJV",
+			"path": "../../IntroduccionJV"
+		},
+		{
+			"name": "css",
+			"path": "../../css"
+		},
+		{
+			"name": "Imagenes",
+			"path": "../../Imagenes"
+		},
+		{
+			"path": "../../Taller de JS"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "cursoJavaS"
+	}
+}

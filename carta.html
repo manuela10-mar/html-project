@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Validación y Pregunta</title>
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #80deea);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #contenidoPrincipal {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+  }
+
+  h2 {
+    text-align: center;
+    color: #00796b;
+  }
+
+  label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #004d40;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #004d40;
+  }
+
+  #segundaAccion,
+  #preguntaIngreso {
+    margin-top: 30px;
+  }
+
+  .botones button {
+    width: 100px;
+    margin: 10px;
+  }
+
+  .carta {
+    border: 2px solid #4CAF50;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    font-size: 18px;
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  #mensajeNo {
+    color: red;
+    font-style: italic;
+    margin-top: 15px;
+  }
+</style>
+
+</head>
+<body>
+    
+  <h2>Inicio de sesión especialmente para Sara</h2>
+  <label for="usuario">Usuario:</label>
+  <input type="text" id="usuario" /><br><br>
+
+  <label for="contrasena">Contraseña:</label>
+  <input type="password" id="contrasena" /><br><br>
+
+  <button onclick="verificarCredenciales()">Siguiente</button>
+
+  <div id="segundaAccion">
+   Ahora que entraste correctamente...
+
+    <div id="preguntaIngreso">
+      <p>¿Ingresaste a la Universidad Nacional amor mío?</p>
+      <div class="botones">
+        <button onclick="responderIngreso(true)">Si</button>
+        <button onclick="responderIngreso(false)">No</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="respuestaNo">
+    <img src="https://i.pinimg.com/736x/9c/0a/ec/9c0aec4c8c45befd75380a454b9a9b73.jpg" alt="Imagen de no ingreso">
+    <p>¡No sea mentirosa! recarga nuevamente la pagina.</p> <!-- Cambia este texto -->
+  </div>
+
+  <div id="respuestaSi">
+    <div class="carta">
+      Primero te felicito, segundo te súper felicito, tercero te ganaste un beso, cuarto...de verdad me alegro espero disfrutes mucho tu carrera, mucho. Te quiero ♥ 
+    </div>
+  </div>
+
+  <script>
+    alert("Bien, ten en cuenta que el usuario y contraseña son sobre ti, si no son digitados correctamente no podras avanzar. Por favor respetar la ortografía y espacios.")
+    function verificarCredenciales() {
+      const usuarioCorrecto = "Sara Bocanegra Ramírez";
+      const contrasenaCorrecta = "Taylor Swift";
+
+      const usuario = document.getElementById("usuario").value;
+      const contrasena = document.getElementById("contrasena").value;
+
+      if (usuario === usuarioCorrecto && contrasena === contrasenaCorrecta) {
+        alert("Inicio de sesión exitoso.¡Eres totalmente bienvenida guapa mía!");
+        document.getElementById("segundaAccion").style.display = "block";
+        document.getElementById("preguntaIngreso").style.display = "block";
+      } else {
+        alert("Usuario o contraseña incorrectos. Piensa mejor Sara jajaja");
+      }
+    }
+
+    function responderIngreso(ingreso) {
+      document.getElementById("preguntaIngreso").style.display = "none";
+      if (ingreso) {
+       document.body.innerHTML = document.getElementById("respuestaSi").innerHTML;
+        document.body.style.display = "flex";
+        document.body.style.justifyContent = "center";
+        document.body.style.alignItems = "center";
+        document.body.style.height = "100vh";
+        document.body.style.backgroundColor = "#f0fff4";
+      } else {
+        document.getElementById("respuestaNo").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>
+
